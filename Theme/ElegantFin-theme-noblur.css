@@ -1,0 +1,335 @@
+@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+
+/* Disable modern effects for older browsers */
+:root {
+  /* Disable all blur effects */
+  --blurSmallest: none;
+  --blurDefault: none;
+  --blurLarge: none;
+  --blurLargest: none;
+  
+  /* Disable backdrop-filter */
+  --backdropFilter: none;
+  
+  /* Disable gradients that might not work well */
+  --backgroundGradient: var(--darkerGradientPoint);
+  --cardBackgroundGradient: var(--darkerGradientPoint);
+  --hoverGradientA: none;
+  --hoverGradientB: none;
+  
+  /* Disable animations and transitions */
+  --transitionSpeed: 0s;
+  
+  /* Simplify shadows for better performance */
+  --shadow: none;
+  
+  /* Reduce border radius for better rendering */
+  --largerRadius: 0.5em;
+  --largeRadius: 0.4em;
+  --smallRadius: 0.3em;
+  --smallerRadius: 0.2em;
+}
+
+/* Override backdrop-filter properties */
+.skinHeader-blurred:not(.osdHeader),
+.appfooter,
+.dialog,
+.mainDrawer,
+.drawer-open,
+.selectionCommandsPanel,
+.collapseContent,
+.formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear),
+.toast,
+.upNextContainer,
+.playerStats,
+.iconOsd,
+#loginPage .padded-left.padded-right.padded-bottom-page,
+.layout-desktop .nowPlayingInfoContainer,
+.layout-mobile .playlistSection .playlist,
+.layout-mobile .playlistSectionButton {
+  backdrop-filter: none !important;
+}
+
+/* Disable transitions */
+.cardScalable,
+.cardImageContainer,
+.cardOverlayContainer,
+.card.card-hoverable .itemSelectionPanel,
+.lyricsLine,
+.pastLyric,
+.futureLyric,
+.dashboardFooter,
+.skinHeader:not(.osdHeader),
+.detailButton,
+.alphaPickerButton,
+.listItem,
+.navMenuOption,
+.button-link,
+.emby-button,
+.fab,
+.raised,
+.paper-icon-button-light,
+.searchfields-icon,
+.inputContainer .emby-input-iconbutton {
+  transition: none !important;
+}
+
+/* Disable transforms */
+.card.card-hoverable:hover .cardImageContainer,
+.card.card-hoverable:hover .cardScalable,
+.card.card-hoverable:hover .itemSelectionPanel,
+.card.card-hoverable .cardScalable:active,
+.pastLyric,
+.futureLyric,
+.headroom--unpinned {
+  transform: none !important;
+}
+
+/* Disable hover effects */
+.card.card-hoverable:hover .cardScalable,
+.card.card-hoverable:hover .cardImageContainer,
+.layout-desktop .card.card-hoverable:hover .cardOverlayContainer,
+.card.card-hoverable:hover .cardScalable,
+.card.card-hoverable:hover .itemSelectionPanel,
+.listItem:hover,
+.navMenuOption:hover,
+.paper-icon-button-light:hover:not(:disabled, .cardOverlayButton),
+.actionSheetMenuItem.emby-button:has(.listItemIcon.material-icons.check[style*="hidden"]):hover,
+.emby-select-withcolor:hover:not(.emby-select[disabled], :focus),
+.emby-input:hover:not(:focus),
+.emby-textarea:hover:not(:focus),
+.checkboxContainer:hover .checkboxOutline:not(.multiSelectCheckboxOutline),
+.raised:hover,
+.fab:hover,
+.emby-button:hover,
+.button-flat:hover,
+.alphaPickerButton:hover,
+.searchfields-icon:hover,
+.inputContainer .emby-input-iconbutton:hover,
+#scenesContent .cardScalable:hover,
+.sectionTitleTextButton:hover,
+.button-link:hover {
+  filter: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+  border-width: inherit !important;
+}
+
+/* Additional optimizations for older/low-end devices */
+
+/* Disable box shadows for better performance */
+.cardScalable,
+.detailButton,
+.fab,
+.raised,
+.emby-button,
+.toast,
+.upNextContainer,
+.nowPlayingPageImage,
+.layout-desktop .nowPlayingInfoContainer {
+  box-shadow: none !important;
+}
+
+/* Disable text shadows for better performance */
+.innerCardFooter,
+.chapterThumbTextContainer {
+  text-shadow: none !important;
+}
+
+/* Disable complex CSS features */
+.cardOverlayContainer:has(.cardOverlayButton:hover),
+.cardScalable:has(.cardOverlayContainer .cardOverlayButton:hover)>.cardImageContainer,
+.itemExternalLinks.focuscontainer-x,
+.card.card-hoverable .cardScalable:active,
+.emby-checkbox:checked+span+.checkboxOutline,
+.emby-checkbox:focus:not(:checked)+span+.checkboxOutline,
+.emby-checkbox:focus+span+.checkboxOutline,
+.checkboxOutline:not(.multiSelectCheckboxOutline) .checkboxIcon,
+.checkboxOutline:not(.multiSelectCheckboxOutline),
+.emby-checkbox:checked+span+.checkboxOutline:not(.multiSelectCheckboxOutline),
+.emby-checkbox:focus:not(:checked)+span+.checkboxOutline,
+.emby-checkbox:focus+span+.checkboxOutline,
+.layout-tv .emby-checkbox:focus:not(:checked)+span+.checkboxOutline,
+.layout-tv .emby-checkbox:focus+span+.checkboxOutline,
+.emby-select-withcolor:focus,
+.emby-input:focus,
+.emby-textarea:focus {
+  /* These selectors use :has() which may not be supported in older browsers */
+  /* Replace with simpler alternatives */
+  background-color: var(--darkerGradientPoint) !important;
+  border-color: var(--borderColor) !important;
+}
+
+/* Disable complex animations */
+@keyframes none {
+  0% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* Disable all animations */
+* {
+  animation: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}
+
+/* Disable complex CSS properties */
+.cardImageContainer,
+.cardOverlayContainer,
+.cardScalable,
+.listItem,
+.navMenuOption,
+.detailButton,
+.emby-button,
+.fab,
+.raised,
+.paper-icon-button-light {
+  will-change: auto !important;
+  transform: none !important;
+  backface-visibility: visible !important;
+  perspective: none !important;
+}
+
+/* Simplify gradients */
+.backgroundContainer:not(.withBackdrop),
+.backgroundContainer.withBackdrop,
+.nowPlayingPageImageContainerNoAlbum .defaultCardBackground {
+  background: var(--darkerGradientPoint) !important;
+  background-image: none !important;
+}
+
+/* Disable complex CSS features that might cause performance issues */
+.cardImageContainer>.cardDefaultText::before,
+.btnPlay[title="Play"]>.detailButton-content::after,
+.btnPlay[title="Resume"]>.detailButton-content::after,
+.btnPlay>.detailButton-content::after,
+.dashboardFooter::after,
+.manualLoginForm::before,
+.visualLoginForm::before {
+  content: none !important;
+}
+
+/* Disable complex CSS features for better performance */
+.cardImageContainer>.cardDefaultText,
+.cardImageContainer>.cardDefaultText::before,
+.btnPlay>.detailButton-content::after,
+.dashboardFooter::after,
+.manualLoginForm::before,
+.visualLoginForm::before {
+  display: none !important;
+}
+
+/* Simplify media queries for better performance */
+@media (max-width: 150em) {
+  .portraitCard,
+  .squareCard {
+    width: 10.4% !important;
+  }
+
+  .backdropCard {
+    width: 13.6% !important;
+  }
+}
+
+@media (max-width: 120em) {
+  .portraitCard,
+  .squareCard {
+    width: 13.5% !important;
+  }
+
+  .backdropCard {
+    width: 15.8% !important;
+  }
+}
+
+@media (max-width: 100em) {
+  .portraitCard,
+  .squareCard {
+    width: 15.2% !important;
+  }
+
+  .backdropCard {
+    width: 18.4% !important;
+  }
+}
+
+@media (max-width: 62em) {
+  .portraitCard,
+  .squareCard {
+    width: 17.9% !important;
+  }
+
+  .backdropCard {
+    width: 23.3% !important;
+  }
+}
+
+@media (max-width: 48.125em) {
+  .portraitCard,
+  .squareCard {
+    width: 22.3% !important;
+  }
+
+  .backdropCard {
+    width: 30.7% !important;
+  }
+}
+
+@media (max-width: 30em) {
+  .portraitCard,
+  .squareCard {
+    width: 28.8% !important;
+  }
+
+  .layout-mobile .portraitCard,
+  .layout-mobile .squareCard {
+    width: 29.8% !important;
+  }
+
+  .backdropCard {
+    width: 46% !important;
+  }
+}
+
+/* Disable complex CSS features for better performance */
+.cardImageContainer>.cardDefaultText,
+.cardImageContainer>.cardDefaultText::before,
+.btnPlay>.detailButton-content::after,
+.dashboardFooter::after,
+.manualLoginForm::before,
+.visualLoginForm::before {
+  display: none !important;
+}
+
+/* Simplify complex selectors */
+.card.card-hoverable:hover .cardScalable,
+.card.card-hoverable:hover .cardImageContainer,
+.card.card-hoverable:hover .itemSelectionPanel,
+.card.card-hoverable .cardScalable:active,
+.pastLyric,
+.futureLyric,
+.headroom--unpinned {
+  transform: none !important;
+}
+
+/* Disable complex CSS features for better performance */
+.cardImageContainer>.cardDefaultText,
+.cardImageContainer>.cardDefaultText::before,
+.btnPlay>.detailButton-content::after,
+.dashboardFooter::after,
+.manualLoginForm::before,
+.visualLoginForm::before {
+  display: none !important;
+}
+
+/* Disable complex CSS features for better performance */
+.cardImageContainer>.cardDefaultText,
+.cardImageContainer>.cardDefaultText::before,
+.btnPlay>.detailButton-content::after,
+.dashboardFooter::after,
+.manualLoginForm::before,
+.visualLoginForm::before {
+  display: none !important;
+}
