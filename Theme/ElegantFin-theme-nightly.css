@@ -213,6 +213,7 @@ html {
 .emby-tabs .emby-button.show-focus:focus {
     background-color: var(--highlightOutlineColor) !important;
     color: #fff !important;
+    transform: scale(1.125) !important;
 }
 
 .emby-tabs .emby-button.show-focus:focus {
