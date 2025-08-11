@@ -213,7 +213,16 @@ html {
 .emby-tabs .emby-button.show-focus:focus {
     background-color: var(--highlightOutlineColor) !important;
     color: #fff !important;
-    transform: scale(1.125) !important;
+}
+
+.emby-button.show-focus:focus {
+    transform: scale(1.125);
+}
+.paper-icon-button-light.show-focus:focus {
+    transform: scale(1.05);
+}
+.emby-tabs .emby-button.show-focus:focus {
+    transform: scale(1.15) !important;
 }
 
 .emby-tabs .emby-button.show-focus:focus {
